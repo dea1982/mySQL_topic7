@@ -8,7 +8,7 @@ INSERT INTO orders(user_id) VALUES
   ('3');
 
 /*
-Составьте список пользователей users, которые осуществили хотя бы один заказ orders в интернет магазине.
+РЎРѕСЃС‚Р°РІСЊС‚Рµ СЃРїРёСЃРѕРє РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ users, РєРѕС‚РѕСЂС‹Рµ РѕСЃСѓС‰РµСЃС‚РІРёР»Рё С…РѕС‚СЏ Р±С‹ РѕРґРёРЅ Р·Р°РєР°Р· orders РІ РёРЅС‚РµСЂРЅРµС‚ РјР°РіР°Р·РёРЅРµ.
  */
 
 select name 
@@ -16,7 +16,8 @@ from users
 where id in (select user_id from orders);
 
 /*
-Выведите список товаров products и разделов catalogs, который соответствует товару.
+Р’С‹РІРµРґРёС‚Рµ СЃРїРёСЃРѕРє С‚РѕРІР°СЂРѕРІ products Рё СЂР°Р·РґРµР»РѕРІ catalogs, РєРѕС‚РѕСЂС‹Р№ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓРµС‚ С‚РѕРІР°СЂСѓ.
  */
+ 
 SELECT products.name, products.catalog_id, catalogs.id, catalogs.name 
 FROM products JOIN catalogs on catalogs.id = products.catalog_id;
